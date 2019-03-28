@@ -1,22 +1,30 @@
-package ru.avalon.java.dev.j10.labs.shapes;
-
-/**
- * Представление о прямоугольнике.
- * <p>
- * Прямоугольник — четырехугольник, у которого все углы
- * прямые (равны 90 градусам).
- *
- * @see <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D1%8F%D0%BC%D0%BE%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA">Прямоугольник</a>
- */
 public class Rectangle implements Polygon{
     int countOfAngle;
     int sideOne;
     int sideTwo;
     
-    public  Rectangle(int countOfAngle, int sideOne, int sideTwo){
+    
+    public  Rectangle(int countOfAngle, Point a, Point b, Point c){
         this.countOfAngle = countOfAngle;
-        this.sideOne = sideOne;
-        this.sideTwo = sideTwo;
+        
+        float aX = a.getX();
+        float aY = a.getY();
+        
+        float bX = b.getX();
+        float bY = b.getY();
+        
+        float cX = c.getX();
+        float cY = c.getY();
+        
+        float oneX = (bX-aX)*(bX-aX);
+        float oneY = (bY-aY)*(bY-aY);
+        float summXYOne = oneX + oneY;
+        this.sideOne = (int) Math.sqrt(summXYOne);
+        
+        float twoX = (cX-bX)*(cX-bX);
+        float twoY = (cY-bY)*(cY-bY);
+        float summXYTwo = twoX + twoY;
+        this.sideTwo = (int) Math.sqrt(summXYTwo);
     }    
 
     @Override
@@ -34,17 +42,5 @@ public class Rectangle implements Polygon{
         return (sideOne * sideTwo); 
     }
 
-    @Override
-    public int getRotation(){
-        return 0; 
-    }
-
-
 }
-
-    /*
-     * TODO: Реализовать класс 'Rectangle'
-     * 1. Используйте наследование.
-     * 2. Реализуйте все абстрактные методы.
-     */
 
