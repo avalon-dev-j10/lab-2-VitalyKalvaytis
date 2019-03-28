@@ -4,6 +4,7 @@ import ru.avalon.java.dev.j10.labs.shapes.Circle;
 import ru.avalon.java.dev.j10.labs.shapes.Rectangle;
 import ru.avalon.java.dev.j10.labs.shapes.Shape;
 import ru.avalon.java.dev.j10.labs.shapes.Triangle;
+import ru.avalon.java.dev.j10.labs.shapes.Point;
 
 public class Main {
 
@@ -11,7 +12,7 @@ public class Main {
         Shape[] shapes = new Shape[10];
         
         for (int i = 0; i < 10; i++){
-            int b = (int) Math.random()*300;
+            int b = (int) (Math.random()*300);
             int a = (int) (Math.random() * b);
             int c = (int) (Math.random() * 5);
             
@@ -24,11 +25,11 @@ public class Main {
                     
                     shapes[i] = new Triangle("Triangle", x, y, z, w);
                 case 1:
-                    x = 60 + c;
-                    y = 6 + c;
-                    z = 10 + c;
+                    Point pA = new Point(3, 1);
+                    Point pB = new Point(7, 2);
+                    Point pC = new Point(12, 5);
                     
-                    shapes[i] = new Rectangle(x, y, z);
+                    shapes[i] = new Rectangle(15, pA, pB, pC);
                 case 2:
                     x = 15 + c;
                     y = 12 + c;
