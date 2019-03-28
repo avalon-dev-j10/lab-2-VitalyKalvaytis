@@ -49,7 +49,9 @@ public interface Shape {
      *
      * @return угол поворота фигуры.
      */
-    int getRotation();
+    default int getRotation(){
+        return 0;
+    };
 
     /*
      * TODO: изменить определение метотода 'getRotation()'
