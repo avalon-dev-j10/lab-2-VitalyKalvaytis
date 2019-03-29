@@ -8,15 +8,15 @@ package ru.avalon.java.dev.j10.labs.shapes;
  *
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Окружность</a>
  */
-public class Circle implements Ellipse{
-    int radius;
-    int xCoordinate;
-    int yCoordinate;
+public class Circle implements Ellipse, Point{
+    private final int radius;
+    float x;
+    float y;
+
     
-    public Circle(int radius, int xCoordinate, int yCoordinate){
-        this.radius = radius;
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
+    public Circle(int radius){
+         this.radius = radius;
+        
     }
 
     @Override
@@ -52,11 +52,11 @@ public class Circle implements Ellipse{
 
     @Override
     public float getX() {
-        return xCoordinate; 
+        return x; 
     }
 
     @Override
     public float getY() {
-        return yCoordinate;
+        return y;
     }
 }
