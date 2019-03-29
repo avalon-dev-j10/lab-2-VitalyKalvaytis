@@ -4,7 +4,6 @@ import ru.avalon.java.dev.j10.labs.shapes.Circle;
 import ru.avalon.java.dev.j10.labs.shapes.Rectangle;
 import ru.avalon.java.dev.j10.labs.shapes.Shape;
 import ru.avalon.java.dev.j10.labs.shapes.Triangle;
-import ru.avalon.java.dev.j10.labs.shapes.Point;
 
 public class Main {
 
@@ -25,17 +24,12 @@ public class Main {
                     
                     shapes[i] = new Triangle("Triangle", x, y, z, w);
                 case 1:
-                    Point pA = new Point(3, 1);
-                    Point pB = new Point(7, 2);
-                    Point pC = new Point(12, 5);
-                    
-                    shapes[i] = new Rectangle(15, pA, pB, pC);
+                  
+                    shapes[i] = new Rectangle(2, a, c);
                 case 2:
                     x = 15 + c;
-                    y = 12 + c;
-                    z = 17 + c;
                     
-                    shapes[i] = new Circle(x, y, z);    
+                    shapes[i] = new Circle(x);    
             }
         }
         int[] myArrayInt = new int[10];
