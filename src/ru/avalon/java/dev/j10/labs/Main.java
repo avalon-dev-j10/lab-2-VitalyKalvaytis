@@ -11,8 +11,10 @@ public class Main {
         Shape[] shapes = new Shape[10];
         
         for (int i = 0; i < 10; i++){
-            int b = (int) (Math.random()*300);
-            int a = (int) (Math.random() * b);
+            int b = (int) (Math.random());
+            double ran = (Math.random()*+3);
+            int ranInt = (int) ran;
+            int a = ranInt;
             int c = (int) (Math.random() * 5);
             
             switch(a){
@@ -23,13 +25,20 @@ public class Main {
                     int w = 3+c;
                     
                     shapes[i] = new Triangle("Triangle", x, y, z, w);
+                    break;
                 case 1:
-                  
-                    shapes[i] = new Rectangle(2, a, c);
+                    int g = 20+a+i;
+                    int l = 2+c+i;
+                    
+                    
+                    
+                    shapes[i] = new Rectangle(2, g, l);
+                    break;
                 case 2:
                     x = 15 + c;
                     
-                    shapes[i] = new Circle(x);    
+                    shapes[i] = new Circle(x, 5 , 7);
+                    break;
             }
         }
         int[] myArrayInt = new int[10];
@@ -44,11 +53,14 @@ public class Main {
             }
         }
         System.out.println(minArea);
-    }
-            
-
-}
         
+        for (int i=0; i<shapes.length; i++){
+            System.out.println(shapes[i].getName() +" "+ shapes[i].getArea());
+        } 
+        
+    }
+    
+}            
 
         /*
          * TODO: Выполнить действия над массивом 'shapes'
