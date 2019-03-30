@@ -14,12 +14,14 @@ package ru.avalon.java.dev.j10.labs.shapes;
  *
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA">Треугольник</a>
  */
-public class Triangle implements Polygon{
+public class Triangle implements Polygon, Point{
     String name;
     int countOfAngle;
     int longOne;
     int longTwo;
     int longThree;
+    float x;
+    float y;
     
     /**
      *
@@ -66,9 +68,16 @@ public class Triangle implements Polygon{
     public String getName() {
         return "Triangle";
     }
-    
-    
-        
+
+    @Override
+    public float getX() {
+        return x;
+    }
+
+    @Override
+    public float getY() {
+        return y;
+    }
 }
     
 
